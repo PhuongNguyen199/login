@@ -8,7 +8,6 @@ public class Controller {
     ArrayList<Registe> registes;
 
     public Controller() {
-        registe = new Registe();
         sr = new Service();
         sc = new Scanner(System.in);
         registes = sr.getAllAccount();

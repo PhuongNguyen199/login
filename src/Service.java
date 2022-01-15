@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Service {
-    Registe registe = new Registe();
 
     public ArrayList<Registe> getAllAccount() {
         ArrayList<Registe> registes = new ArrayList<>();
