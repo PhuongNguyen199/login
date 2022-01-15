@@ -26,6 +26,7 @@ public class Controller {
                 System.out.println("Nhap password");
                 String password = sc.nextLine();
                 sr.login(userName, password, registes);
+
                 break;
             case 2:
                 System.out.println("Dang ky");
@@ -43,7 +44,7 @@ public class Controller {
         //}
     }
 
-    public void changName() {
+    public void changName(Registe registe) {
         boolean isContinue = true;
         while (isContinue) {
             Menu.menu3();
@@ -57,12 +58,12 @@ public class Controller {
                 case 2:
                     System.out.println("Nhap Email muon thay doi");
                     String changeEmail = sc.nextLine();
-                    sr.changeUserName(registe, changeEmail);
+                    sr.changeEmail(registe, changeEmail);
                     break;
                 case 3:
                     System.out.println("Nhap Password muon thay doi");
                     String changePassword = sc.nextLine();
-                    sr.changeUserName(registe, changePassword);
+                    sr.changePassword(registe, changePassword);
                     break;
                 case 4:
                     Menu.menu1();

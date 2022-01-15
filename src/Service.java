@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Service {
+    //Registe registe;
 
     public ArrayList<Registe> getAllAccount() {
         ArrayList<Registe> registes = new ArrayList<>();
@@ -18,17 +19,18 @@ public class Service {
 
     public void login(String username, String password, ArrayList<Registe> registes) {
         Controller controller = new Controller();
-        for (Registe registe : registes) {
-            if (registe.getUserName().equals(username) && registe.getPassword().equals(password)) {
-                System.out.println("Chao mung " + registe.getUserName());
-                controller.changName();
+        for (Registe req : registes) {
+            if (req.getUserName().equals(username) && req.getPassword().equals(password)) {
+                System.out.println("Chao mung " + req.getUserName());
+                Registe registe = req;
+                controller.changName(registe);
                 break;
             }
-            if (registe.getUserName().equals(username) && registe.getPassword() != password) {
+            if (req.getUserName().equals(username) && req.getPassword() != password) {
                 System.out.println("Sai pass word");
                 controller.mainMenu2();
             }
-            if (registe.getUserName() != username && registe.getPassword().equals(password)) {
+            if (req.getUserName() != username && req.getPassword().equals(password)) {
                 System.out.println("Sai username");
             }
         }
@@ -49,7 +51,7 @@ public class Service {
         show(registes);
     }
 
-    public void changeUserName(Registe registe, String username) {
+    public void changeUserName( Registe registe, String username) {
         registe.setUserName(username);
         System.out.println("Ten sau khi cap nhap:");
         System.out.println(registe);
